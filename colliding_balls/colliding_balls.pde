@@ -25,23 +25,28 @@ void draw() {
     } else {
       vel.x=abs(vel.x);
     }
-    } else {
-      fill(0, 100, 200);
-    }
-
-
-
-    ellipse(loc.x, loc.y, sz, sz);
-
-    if (loc.x +sz/2 > width || loc.x-sz/2<0) {
-      vel.x *= -1;
-    }
-    if (loc.y+sz/2> height|| loc.y-sz/2<0) {
-      vel.y*=-1;
-    }
-
-
-
-    ellipse(mouse.x, mouse.y, 20, 20);
+    
+    if (loc.y < mouse.y){
+      vel.y=-abs(vel.y);
+    } else{
+      vel.y = abs(vel.y);
+  } 
+  }else {
+    fill(0, 100, 200);
   }
+
+
+  ellipse(loc.x, loc.y, sz, sz);
+
+  if (loc.x +sz/2 > width || loc.x-sz/2<0) {
+    vel.x *= -1;
+  }
+  if (loc.y+sz/2> height|| loc.y-sz/2<0) {
+    vel.y*=-1;
+  }
+
+
+
+  ellipse(mouse.x, mouse.y, 5, 5);
+}
 
